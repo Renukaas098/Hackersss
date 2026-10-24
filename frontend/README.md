@@ -30,25 +30,32 @@ Shop invite codes: `PUNE-NGO-4821`, `KOCHI-NGO-1307`, `DELHI-NGO-5590`
 
 ## How data loading works
 
-```
-pages  ->  src/api/index.js  ->  USE_MOCK ? src/mock/mockApi.js : request() in src/api/client.js
-```
+\
+- **Live (default):**  holds  (the  base) and
+  . Every request sends  and   (). Filters use PostgREST syntax via , e.g. .
+-  maps the snake_case tables to the camelCase shapes in ,
+  so pages did not change.
+- **Mock:** set  to run with no network on the JSON in .
+- **Login and register stay on the mock in both modes**: the Supabase project has no users or
+  invite-code tables yet. Demo login:  / .
 
-- `src/mock/*.json` holds the seed data. Use the same files to seed the database.
-- `src/mock/mockApi.js` applies the same rules as the backend: the 5-report threshold, the gap
-  formula, and NGO-only access. The response shapes match the API contract exactly.
-- Mock state (new reports, new accounts) lives in memory and resets when the page reloads.
+| Contract endpoint | Supabase source |
+|---|---|
+| #1 meta | , , ,  |
+| #2 prices |  +  |
+| #3 submit report |  (client sends  and ; validation runs in the client), then  |
+| #4 area gaps | ; gap figures computed from  +  for visible areas |
+| #5, #6 impact |  |
+| #7 assumptions |  +  |
+| #8 sources |  |
+| #9, #10 NGO summary and CSV | computed from  +  |
 
-## Connecting the backend
+## Backend to-dos found while connecting
 
-Everything is marked with `BACKEND:` comments. Search for it.
-
-1. `src/config.js`: uncomment the `API_BASE_URL` line.
-2. `src/api/index.js`: uncomment `import { request, qs }`, then for each endpoint uncomment its
-   `BACKEND:` line and delete the `throw notConnected(...)` under it. You can do this one endpoint
-   at a time.
-3. Create `.env.local` from `.env.example` with `VITE_USE_MOCK=false` and `VITE_API_BASE_URL=...`.
-4. Optional: uncomment the `/api` proxy in `vite.config.js` for local development.
-
-The front end sends `Authorization: Bearer <token>` on `/api/ngo/*`, `/api/auth/me` and
-`POST /api/reports`. The backend must require it on the first two and treat it as optional on reports.
+- Turn on Row Level Security. Right now the public key can read every raw report, delete reports,
+  and update . Allow anon only  on reference tables and  on .
+- Add  and  to the  view and add an NGO summary
+  view, so the front end stops reading raw reports.
+- Give  and  defaults, and add check constraints matching the
+  validation in .
+-  is static seed data (77 reports for Pune) while  has 14 rows.
