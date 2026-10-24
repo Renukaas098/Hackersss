@@ -1,0 +1,106 @@
+{
+  "method": "GET",
+  "path": "/api/prices",
+  "auth": "none",
+  "purpose": "Price ranges for one city, optionally filtered by material and grade. Each range carries its source, date and sample size.",
+  "usedBy": [
+    "Home quick lookup",
+    "Price Range Board"
+  ],
+  "query": {
+    "city": {
+      "required": true,
+      "example": "pune"
+    },
+    "material": {
+      "required": false,
+      "example": "pet",
+      "note": "omit or 'all' for every material"
+    },
+    "grade": {
+      "required": false,
+      "example": "B",
+      "note": "A | B | C, omit or 'all' for every grade"
+    }
+  },
+  "exampleUrl": "/api/prices?city=pune&material=pet",
+  "response": {
+    "status": 200,
+    "body": {
+      "cityId": "pune",
+      "updatedAt": "2026-10-22",
+      "ranges": [
+        {
+          "id": "pune-pet-A",
+          "cityId": "pune",
+          "materialId": "pet",
+          "grade": "A",
+          "unit": "kg",
+          "currency": "INR",
+          "min": 22,
+          "max": 28,
+          "median": 25,
+          "sourceId": "src-rl-pune",
+          "asOf": "2026-10-18",
+          "sampleSize": 11,
+          "isSample": true,
+          "source": {
+            "id": "src-rl-pune",
+            "name": "Sample recycler rate list (Pune)",
+            "type": "recycler_rate_list"
+          }
+        },
+        {
+          "id": "pune-pet-B",
+          "cityId": "pune",
+          "materialId": "pet",
+          "grade": "B",
+          "unit": "kg",
+          "currency": "INR",
+          "min": 18,
+          "max": 22,
+          "median": 20,
+          "sourceId": "src-ngo-pune",
+          "asOf": "2026-10-12",
+          "sampleSize": 12,
+          "isSample": true,
+          "source": {
+            "id": "src-ngo-pune",
+            "name": "Sample NGO rate sheet (Pune)",
+            "type": "ngo_sheet"
+          }
+        },
+        {
+          "id": "pune-pet-C",
+          "cityId": "pune",
+          "materialId": "pet",
+          "grade": "C",
+          "unit": "kg",
+          "currency": "INR",
+          "min": 12,
+          "max": 15,
+          "median": 13.5,
+          "sourceId": "src-shop",
+          "asOf": "2026-10-22",
+          "sampleSize": 13,
+          "isSample": true,
+          "source": {
+            "id": "src-shop",
+            "name": "Verified shop reports (seeded)",
+            "type": "shop_reports"
+          }
+        }
+      ]
+    }
+  },
+  "errors": [
+    {
+      "status": 400,
+      "body": {
+        "message": "Unknown city \"mumbai\".",
+        "code": "UNKNOWN_CITY"
+      }
+    }
+  ],
+  "priority": "core"
+}

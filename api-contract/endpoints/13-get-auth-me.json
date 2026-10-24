@@ -1,0 +1,33 @@
+{
+  "method": "GET",
+  "path": "/api/auth/me",
+  "auth": "required",
+  "purpose": "Who the token belongs to. The frontend calls it on load to restore the session and guard the NGO View.",
+  "usedBy": [
+    "App start",
+    "NGO View guard"
+  ],
+  "headers": {
+    "Authorization": "Bearer <token>"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": "usr_0007",
+      "role": "ngo",
+      "name": "Sample NGO partner",
+      "email": "ngo.demo@example.com",
+      "cityId": "pune"
+    }
+  },
+  "errors": [
+    {
+      "status": 401,
+      "body": {
+        "message": "Not logged in.",
+        "code": "UNAUTHENTICATED"
+      }
+    }
+  ],
+  "priority": "core"
+}

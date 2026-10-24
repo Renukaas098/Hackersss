@@ -1,0 +1,156 @@
+[
+  {
+    "file": "01-get-meta.json",
+    "method": "GET",
+    "path": "/api/meta",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "App start (every page)"
+    ]
+  },
+  {
+    "file": "02-get-prices.json",
+    "method": "GET",
+    "path": "/api/prices",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Home quick lookup",
+      "Price Range Board"
+    ]
+  },
+  {
+    "file": "03-post-reports.json",
+    "method": "POST",
+    "path": "/api/reports",
+    "auth": "optional",
+    "priority": "core",
+    "usedBy": [
+      "Report an Offer"
+    ]
+  },
+  {
+    "file": "04-get-area-gaps.json",
+    "method": "GET",
+    "path": "/api/areas/gaps",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Area Map"
+    ]
+  },
+  {
+    "file": "05-get-impact-summary.json",
+    "method": "GET",
+    "path": "/api/impact/summary",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Impact Dashboard",
+      "Home"
+    ]
+  },
+  {
+    "file": "06-get-impact-trend.json",
+    "method": "GET",
+    "path": "/api/impact/trend",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Impact Dashboard"
+    ]
+  },
+  {
+    "file": "07-get-assumptions.json",
+    "method": "GET",
+    "path": "/api/assumptions",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Impact Dashboard",
+      "Methodology"
+    ]
+  },
+  {
+    "file": "08-get-sources.json",
+    "method": "GET",
+    "path": "/api/sources",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Methodology"
+    ]
+  },
+  {
+    "file": "09-get-ngo-summary.json",
+    "method": "GET",
+    "path": "/api/ngo/summary",
+    "auth": "required (role ngo)",
+    "priority": "core",
+    "usedBy": [
+      "NGO View"
+    ]
+  },
+  {
+    "file": "10-get-ngo-export.json",
+    "method": "GET",
+    "path": "/api/ngo/export",
+    "auth": "required (role ngo)",
+    "priority": "core",
+    "usedBy": [
+      "NGO View (Export CSV button)"
+    ]
+  },
+  {
+    "file": "11-post-auth-register.json",
+    "method": "POST",
+    "path": "/api/auth/register",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Register"
+    ]
+  },
+  {
+    "file": "12-post-auth-login.json",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "auth": "none",
+    "priority": "core",
+    "usedBy": [
+      "Login"
+    ]
+  },
+  {
+    "file": "13-get-auth-me.json",
+    "method": "GET",
+    "path": "/api/auth/me",
+    "auth": "required",
+    "priority": "core",
+    "usedBy": [
+      "App start",
+      "NGO View guard"
+    ]
+  },
+  {
+    "file": "14-patch-report-verify.json",
+    "method": "PATCH",
+    "path": "/api/reports/:id/verify",
+    "auth": "required (role ngo)",
+    "priority": "stretch",
+    "usedBy": [
+      "Not in the frontend yet"
+    ]
+  },
+  {
+    "file": "15-get-health.json",
+    "method": "GET",
+    "path": "/api/health",
+    "auth": "none",
+    "priority": "nice to have",
+    "usedBy": [
+      "Deploy check"
+    ]
+  }
+]

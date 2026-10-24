@@ -1,0 +1,17 @@
+{
+  "method": "GET",
+  "path": "/api/health",
+  "auth": "none",
+  "priority": "nice to have",
+  "purpose": "Deploy check before the demo.",
+  "usedBy": [
+    "Deploy check"
+  ],
+  "response": {
+    "status": 200,
+    "body": {
+      "ok": true,
+      "version": "0.1.0"
+    }
+  }
+}

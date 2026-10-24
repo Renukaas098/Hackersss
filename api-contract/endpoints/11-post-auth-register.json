@@ -1,0 +1,90 @@
+{
+  "method": "POST",
+  "path": "/api/auth/register",
+  "auth": "none",
+  "purpose": "Create a shop account (needs an NGO invite code) or an NGO partner account.",
+  "usedBy": [
+    "Register"
+  ],
+  "notes": [
+    "Shops: store only cityId, areaId and partnerId (from the invite code). No shop name or phone.",
+    "Hash passwords (bcrypt/argon2). Never return the password.",
+    "name for a shop is generated: 'Shop in <area name>'."
+  ],
+  "requestBody": {
+    "shop": {
+      "role": "shop",
+      "email": "shop.demo@example.com",
+      "password": "shoppass1",
+      "cityId": "pune",
+      "areaId": "pune-hadapsar",
+      "inviteCode": "PUNE-NGO-4821"
+    },
+    "ngo": {
+      "role": "ngo",
+      "email": "ngo.new@example.com",
+      "password": "ngopass12",
+      "cityId": "kochi",
+      "organisationName": "Sample Kochi collective"
+    }
+  },
+  "validation": {
+    "role": "shop | ngo",
+    "email": "valid email, unique",
+    "password": "8+ characters",
+    "cityId": "must exist",
+    "areaId": "shop only, must belong to cityId",
+    "inviteCode": "shop only, must match an active invite code",
+    "organisationName": "ngo only, required"
+  },
+  "response": {
+    "status": 201,
+    "body": {
+      "shop": {
+        "user": {
+          "id": "usr_2001",
+          "role": "shop",
+          "email": "shop.demo@example.com",
+          "cityId": "pune",
+          "areaId": "pune-hadapsar",
+          "partnerId": "ngo_partner_sample",
+          "name": "Shop in Hadapsar"
+        },
+        "token": "<jwt>"
+      },
+      "ngo": {
+        "user": {
+          "id": "usr_2002",
+          "role": "ngo",
+          "email": "ngo.new@example.com",
+          "cityId": "kochi",
+          "name": "Sample Kochi collective"
+        },
+        "token": "<jwt>"
+      }
+    }
+  },
+  "errors": [
+    {
+      "status": 400,
+      "body": {
+        "message": "That invite code is not valid. Ask your NGO for a code like PUNE-NGO-4821.",
+        "code": "INVALID_INVITE",
+        "fields": {
+          "inviteCode": "That invite code is not valid."
+        }
+      }
+    },
+    {
+      "status": 409,
+      "body": {
+        "message": "An account with this email already exists. Log in instead.",
+        "code": "EMAIL_TAKEN",
+        "fields": {
+          "email": "Already registered."
+        }
+      }
+    }
+  ],
+  "priority": "core"
+}

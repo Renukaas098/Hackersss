@@ -1,0 +1,34 @@
+{
+  "method": "PATCH",
+  "path": "/api/reports/:id/verify",
+  "auth": "required (role ngo)",
+  "priority": "stretch",
+  "purpose": "Lets a partner NGO verify (or reject) an early or flagged report.",
+  "usedBy": [
+    "Not in the frontend yet"
+  ],
+  "headers": {
+    "Authorization": "Bearer <token>"
+  },
+  "requestBody": {
+    "verified": true
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "id": "rep_1003",
+      "verified": true,
+      "verifiedBy": "ngo_partner_sample",
+      "verifiedAt": "2026-10-24T16:10:00+05:30"
+    }
+  },
+  "errors": [
+    {
+      "status": 404,
+      "body": {
+        "message": "Report not found.",
+        "code": "NOT_FOUND"
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "method": "POST",
+  "path": "/api/reports",
+  "auth": "optional",
+  "purpose": "Store an anonymous 'what was I offered' report and return how it compares with the local range (drives the thank-you screen).",
+  "usedBy": [
+    "Report an Offer"
+  ],
+  "notes": [
+    "Never store a user id on the report. If a shop token is sent, store only its partnerId.",
+    "Set flagged=true when offeredPrice < 0.2 x median or > 3 x median. Store it, but leave it out of aggregates until an NGO verifies it.",
+    "gapPct = round((median - offeredPrice) / median * 100). Positive means below the median.",
+    "position: 'below' if offeredPrice < min, 'above' if > max, otherwise 'within'.",
+    "Rate-limit by IP, for example 10 per hour."
+  ],
+  "requestBody": {
+    "cityId": "pune",
+    "areaId": "pune-hadapsar",
+    "materialId": "pet",
+    "grade": "B",
+    "quantityKg": 40,
+    "offeredPrice": 15,
+    "buyerType": "aggregator",
+    "offeredOn": "2026-10-24"
+  },
+  "validation": {
+    "cityId": "must exist",
+    "areaId": "must exist and belong to cityId",
+    "materialId": "must exist",
+    "grade": "A | B | C",
+    "quantityKg": "number, 0.1 to 5000",
+    "offeredPrice": "number > 0 (INR per kg)",
+    "buyerType": "aggregator | recycler | other_shop | other",
+    "offeredOn": "YYYY-MM-DD, not in the future"
+  },
+  "response": {
+    "status": 201,
+    "body": {
+      "reportId": "rep_1015",
+      "comparison": {
+        "min": 18,
+        "max": 22,
+        "median": 20,
+        "offeredPrice": 15,
+        "gapPct": 25,
+        "position": "below",
+        "source": {
+          "id": "src-ngo-pune",
+          "name": "Sample NGO rate sheet (Pune)",
+          "type": "ngo_sheet"
+        },
+        "asOf": "2026-10-12"
+      },
+      "area": {
+        "areaId": "pune-hadapsar",
+        "name": "Hadapsar",
+        "reportCount": 23,
+        "threshold": 5,
+        "visible": true
+      },
+      "flagged": false
+    }
+  },
+  "errors": [
+    {
+      "status": 400,
+      "body": {
+        "message": "Quantity must be between 0.1 and 5000 kg.",
+        "code": "VALIDATION_ERROR",
+        "fields": {
+          "quantityKg": "Quantity must be between 0.1 and 5000 kg."
+        }
+      }
+    },
+    {
+      "status": 400,
+      "body": {
+        "message": "Pick an area in the selected city.",
+        "code": "VALIDATION_ERROR",
+        "fields": {
+          "areaId": "Pick an area in the selected city."
+        }
+      }
+    },
+    {
+      "status": 429,
+      "body": {
+        "message": "Too many reports from this connection. Try again in an hour.",
+        "code": "RATE_LIMITED"
+      }
+    }
+  ],
+  "priority": "core"
+}

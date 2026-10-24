@@ -1,0 +1,29 @@
+[
+  {
+    "id": "pune",
+    "name": "Pune",
+    "state": "Maharashtra",
+    "center": [
+      18.55,
+      73.85
+    ]
+  },
+  {
+    "id": "kochi",
+    "name": "Kochi",
+    "state": "Kerala",
+    "center": [
+      9.99,
+      76.29
+    ]
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "state": "Delhi NCR",
+    "center": [
+      28.6,
+      77.27
+    ]
+  }
+]

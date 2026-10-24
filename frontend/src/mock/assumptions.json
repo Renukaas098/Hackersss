@@ -1,0 +1,69 @@
+{
+  "threshold": 5,
+  "gapFormula": "gapPct = (prevailingMedian - offeredPrice) / prevailingMedian * 100",
+  "prevailingGrade": "B (used when the report grade is unknown)",
+  "landfillRetentionUplift": 0.15,
+  "landfillNote": "Share of low-value material (LDPE film, cardboard) assumed to stay in the stream because collection pays again. Illustrative, to be measured in the pilot.",
+  "emissionFactors": [
+    {
+      "materialId": "pet",
+      "kgCO2ePerKg": 1.5,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "hdpe",
+      "kgCO2ePerKg": 1.2,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "ldpe_film",
+      "kgCO2ePerKg": 1,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "newspaper",
+      "kgCO2ePerKg": 0.9,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "cardboard",
+      "kgCO2ePerKg": 0.9,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "office",
+      "kgCO2ePerKg": 1,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "iron",
+      "kgCO2ePerKg": 1.5,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "aluminium",
+      "kgCO2ePerKg": 9,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "copper",
+      "kgCO2ePerKg": 3,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    },
+    {
+      "materialId": "ewaste",
+      "kgCO2ePerKg": 1,
+      "status": "placeholder",
+      "source": "Replace with a cited factor (e.g. US EPA WARM or a peer-reviewed LCA) before the pitch"
+    }
+  ]
+}

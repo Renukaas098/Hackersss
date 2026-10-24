@@ -1,0 +1,74 @@
+{
+  "months": [
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08",
+    "2026-09",
+    "2026-10"
+  ],
+  "gapTrend": {
+    "pune": [
+      24,
+      22,
+      21,
+      19,
+      17,
+      16
+    ],
+    "kochi": [
+      18,
+      17,
+      15,
+      14,
+      13,
+      12
+    ],
+    "delhi": [
+      30,
+      29,
+      28,
+      26,
+      25,
+      24
+    ]
+  },
+  "volumes": {
+    "pune": {
+      "pet": 820,
+      "hdpe": 310,
+      "ldpe_film": 540,
+      "newspaper": 690,
+      "cardboard": 1240,
+      "iron": 960,
+      "aluminium": 85
+    },
+    "kochi": {
+      "pet": 610,
+      "hdpe": 240,
+      "ldpe_film": 380,
+      "newspaper": 520,
+      "cardboard": 980,
+      "iron": 720,
+      "aluminium": 60
+    },
+    "delhi": {
+      "pet": 1150,
+      "hdpe": 420,
+      "ldpe_film": 880,
+      "newspaper": 940,
+      "cardboard": 1620,
+      "iron": 1380,
+      "aluminium": 120
+    }
+  },
+  "shareAtOrAbove": {
+    "pune": 0.38,
+    "kochi": 0.44,
+    "delhi": 0.29
+  },
+  "period": {
+    "from": "2026-05-01",
+    "to": "2026-10-24"
+  }
+}
