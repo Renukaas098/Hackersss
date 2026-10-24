@@ -1,0 +1,128 @@
+[
+  {
+    "id": "pune-kothrud",
+    "cityId": "pune",
+    "name": "Kothrud",
+    "lat": 18.5074,
+    "lng": 73.8077
+  },
+  {
+    "id": "pune-hadapsar",
+    "cityId": "pune",
+    "name": "Hadapsar",
+    "lat": 18.5089,
+    "lng": 73.926
+  },
+  {
+    "id": "pune-yerawada",
+    "cityId": "pune",
+    "name": "Yerawada",
+    "lat": 18.5523,
+    "lng": 73.8867
+  },
+  {
+    "id": "pune-kasba",
+    "cityId": "pune",
+    "name": "Kasba Peth",
+    "lat": 18.5196,
+    "lng": 73.8573
+  },
+  {
+    "id": "pune-aundh",
+    "cityId": "pune",
+    "name": "Aundh",
+    "lat": 18.559,
+    "lng": 73.8077
+  },
+  {
+    "id": "pune-pimpri",
+    "cityId": "pune",
+    "name": "Pimpri",
+    "lat": 18.6298,
+    "lng": 73.7997
+  },
+  {
+    "id": "kochi-ernakulam",
+    "cityId": "kochi",
+    "name": "Ernakulam South",
+    "lat": 9.9696,
+    "lng": 76.2891
+  },
+  {
+    "id": "kochi-kaloor",
+    "cityId": "kochi",
+    "name": "Kaloor",
+    "lat": 9.9971,
+    "lng": 76.2989
+  },
+  {
+    "id": "kochi-edappally",
+    "cityId": "kochi",
+    "name": "Edappally",
+    "lat": 10.0261,
+    "lng": 76.3125
+  },
+  {
+    "id": "kochi-fortkochi",
+    "cityId": "kochi",
+    "name": "Fort Kochi",
+    "lat": 9.9658,
+    "lng": 76.2421
+  },
+  {
+    "id": "kochi-vyttila",
+    "cityId": "kochi",
+    "name": "Vyttila",
+    "lat": 9.9674,
+    "lng": 76.32
+  },
+  {
+    "id": "kochi-kakkanad",
+    "cityId": "kochi",
+    "name": "Kakkanad",
+    "lat": 10.0159,
+    "lng": 76.3419
+  },
+  {
+    "id": "delhi-seelampur",
+    "cityId": "delhi",
+    "name": "Seelampur",
+    "lat": 28.668,
+    "lng": 77.27
+  },
+  {
+    "id": "delhi-okhla",
+    "cityId": "delhi",
+    "name": "Okhla",
+    "lat": 28.5355,
+    "lng": 77.2731
+  },
+  {
+    "id": "delhi-shahdara",
+    "cityId": "delhi",
+    "name": "Shahdara",
+    "lat": 28.6735,
+    "lng": 77.2896
+  },
+  {
+    "id": "delhi-mustafabad",
+    "cityId": "delhi",
+    "name": "Mustafabad",
+    "lat": 28.71,
+    "lng": 77.27
+  },
+  {
+    "id": "delhi-govindpuri",
+    "cityId": "delhi",
+    "name": "Govindpuri",
+    "lat": 28.534,
+    "lng": 77.264
+  },
+  {
+    "id": "delhi-tughlakabad",
+    "cityId": "delhi",
+    "name": "Tughlakabad",
+    "lat": 28.51,
+    "lng": 77.26
+  }
+]

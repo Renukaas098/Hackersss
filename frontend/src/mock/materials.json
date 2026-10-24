@@ -1,0 +1,72 @@
+[
+  {
+    "id": "pet",
+    "name": "PET bottles",
+    "category": "Plastic",
+    "lowValue": false,
+    "unit": "kg"
+  },
+  {
+    "id": "hdpe",
+    "name": "HDPE (milk, shampoo)",
+    "category": "Plastic",
+    "lowValue": false,
+    "unit": "kg"
+  },
+  {
+    "id": "ldpe_film",
+    "name": "LDPE film / carry bags",
+    "category": "Plastic",
+    "lowValue": true,
+    "unit": "kg"
+  },
+  {
+    "id": "newspaper",
+    "name": "Newspaper",
+    "category": "Paper",
+    "lowValue": false,
+    "unit": "kg"
+  },
+  {
+    "id": "cardboard",
+    "name": "Cardboard (OCC)",
+    "category": "Paper",
+    "lowValue": true,
+    "unit": "kg"
+  },
+  {
+    "id": "office",
+    "name": "White office paper",
+    "category": "Paper",
+    "lowValue": false,
+    "unit": "kg"
+  },
+  {
+    "id": "iron",
+    "name": "Iron / steel scrap",
+    "category": "Metal",
+    "lowValue": false,
+    "unit": "kg"
+  },
+  {
+    "id": "aluminium",
+    "name": "Aluminium cans",
+    "category": "Metal",
+    "lowValue": false,
+    "unit": "kg"
+  },
+  {
+    "id": "copper",
+    "name": "Copper wire (stripped)",
+    "category": "Metal",
+    "lowValue": false,
+    "unit": "kg"
+  },
+  {
+    "id": "ewaste",
+    "name": "E-waste (small appliances)",
+    "category": "E-waste",
+    "lowValue": false,
+    "unit": "kg"
+  }
+]

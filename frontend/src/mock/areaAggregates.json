@@ -1,0 +1,216 @@
+{
+  "pune": [
+    {
+      "areaId": "pune-kothrud",
+      "name": "Kothrud",
+      "lat": 18.5074,
+      "lng": 73.8077,
+      "reportCount": 14,
+      "visible": true,
+      "medianGapPct": 9,
+      "worstMaterialId": "newspaper",
+      "prevailingMedian": 12.5,
+      "medianOffered": 11.5
+    },
+    {
+      "areaId": "pune-hadapsar",
+      "name": "Hadapsar",
+      "lat": 18.5089,
+      "lng": 73.926,
+      "reportCount": 22,
+      "visible": true,
+      "medianGapPct": 21,
+      "worstMaterialId": "pet",
+      "prevailingMedian": 20,
+      "medianOffered": 16
+    },
+    {
+      "areaId": "pune-yerawada",
+      "name": "Yerawada",
+      "lat": 18.5523,
+      "lng": 73.8867,
+      "reportCount": 18,
+      "visible": true,
+      "medianGapPct": 27,
+      "worstMaterialId": "ldpe_film",
+      "prevailingMedian": 9.5,
+      "medianOffered": 7
+    },
+    {
+      "areaId": "pune-kasba",
+      "name": "Kasba Peth",
+      "lat": 18.5196,
+      "lng": 73.8573,
+      "reportCount": 11,
+      "visible": true,
+      "medianGapPct": 12,
+      "worstMaterialId": "cardboard",
+      "prevailingMedian": 8.5,
+      "medianOffered": 7.5
+    },
+    {
+      "areaId": "pune-aundh",
+      "name": "Aundh",
+      "lat": 18.559,
+      "lng": 73.8077,
+      "reportCount": 3,
+      "visible": false,
+      "medianGapPct": null,
+      "worstMaterialId": null
+    },
+    {
+      "areaId": "pune-pimpri",
+      "name": "Pimpri",
+      "lat": 18.6298,
+      "lng": 73.7997,
+      "reportCount": 9,
+      "visible": true,
+      "medianGapPct": 18,
+      "worstMaterialId": "iron",
+      "prevailingMedian": 26.5,
+      "medianOffered": 21.5
+    }
+  ],
+  "kochi": [
+    {
+      "areaId": "kochi-ernakulam",
+      "name": "Ernakulam South",
+      "lat": 9.9696,
+      "lng": 76.2891,
+      "reportCount": 12,
+      "visible": true,
+      "medianGapPct": 8,
+      "worstMaterialId": "pet",
+      "prevailingMedian": 19,
+      "medianOffered": 17.5
+    },
+    {
+      "areaId": "kochi-kaloor",
+      "name": "Kaloor",
+      "lat": 9.9971,
+      "lng": 76.2989,
+      "reportCount": 7,
+      "visible": true,
+      "medianGapPct": 14,
+      "worstMaterialId": "cardboard",
+      "prevailingMedian": 8.5,
+      "medianOffered": 7.5
+    },
+    {
+      "areaId": "kochi-edappally",
+      "name": "Edappally",
+      "lat": 10.0261,
+      "lng": 76.3125,
+      "reportCount": 4,
+      "visible": false,
+      "medianGapPct": null,
+      "worstMaterialId": null
+    },
+    {
+      "areaId": "kochi-fortkochi",
+      "name": "Fort Kochi",
+      "lat": 9.9658,
+      "lng": 76.2421,
+      "reportCount": 6,
+      "visible": true,
+      "medianGapPct": 19,
+      "worstMaterialId": "ldpe_film",
+      "prevailingMedian": 9.5,
+      "medianOffered": 7.5
+    },
+    {
+      "areaId": "kochi-vyttila",
+      "name": "Vyttila",
+      "lat": 9.9674,
+      "lng": 76.32,
+      "reportCount": 10,
+      "visible": true,
+      "medianGapPct": 11,
+      "worstMaterialId": "newspaper",
+      "prevailingMedian": 12.5,
+      "medianOffered": 11
+    },
+    {
+      "areaId": "kochi-kakkanad",
+      "name": "Kakkanad",
+      "lat": 10.0159,
+      "lng": 76.3419,
+      "reportCount": 2,
+      "visible": false,
+      "medianGapPct": null,
+      "worstMaterialId": null
+    }
+  ],
+  "delhi": [
+    {
+      "areaId": "delhi-seelampur",
+      "name": "Seelampur",
+      "lat": 28.668,
+      "lng": 77.27,
+      "reportCount": 25,
+      "visible": true,
+      "medianGapPct": 31,
+      "worstMaterialId": "ewaste",
+      "prevailingMedian": 23.5,
+      "medianOffered": 16
+    },
+    {
+      "areaId": "delhi-okhla",
+      "name": "Okhla",
+      "lat": 28.5355,
+      "lng": 77.2731,
+      "reportCount": 16,
+      "visible": true,
+      "medianGapPct": 24,
+      "worstMaterialId": "pet",
+      "prevailingMedian": 21.5,
+      "medianOffered": 16.5
+    },
+    {
+      "areaId": "delhi-shahdara",
+      "name": "Shahdara",
+      "lat": 28.6735,
+      "lng": 77.2896,
+      "reportCount": 13,
+      "visible": true,
+      "medianGapPct": 22,
+      "worstMaterialId": "cardboard",
+      "prevailingMedian": 9.5,
+      "medianOffered": 7.5
+    },
+    {
+      "areaId": "delhi-mustafabad",
+      "name": "Mustafabad",
+      "lat": 28.71,
+      "lng": 77.27,
+      "reportCount": 8,
+      "visible": true,
+      "medianGapPct": 28,
+      "worstMaterialId": "ldpe_film",
+      "prevailingMedian": 10,
+      "medianOffered": 7
+    },
+    {
+      "areaId": "delhi-govindpuri",
+      "name": "Govindpuri",
+      "lat": 28.534,
+      "lng": 77.264,
+      "reportCount": 5,
+      "visible": true,
+      "medianGapPct": 17,
+      "worstMaterialId": "iron",
+      "prevailingMedian": 28,
+      "medianOffered": 23
+    },
+    {
+      "areaId": "delhi-tughlakabad",
+      "name": "Tughlakabad",
+      "lat": 28.51,
+      "lng": 77.26,
+      "reportCount": 1,
+      "visible": false,
+      "medianGapPct": null,
+      "worstMaterialId": null
+    }
+  ]
+}
