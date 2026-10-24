@@ -238,6 +238,10 @@ export function register({ role, email, password, cityId, areaId, inviteCode, or
   return { user: safe, token: `mock-token:${user.id}` };
 }
 
+export function getInviteCodes({ city }) {
+  return usersFile.inviteCodes.filter((c) => c.cityId === city).map(({ code, partnerId }) => ({ code, partnerId }));
+}
+
 export function login({ email, password }) {
   const user = users.find((u) => u.email.toLowerCase() === (email || "").trim().toLowerCase());
   if (!user || user.password !== password) throw new ApiError("Email or password is wrong.", 401);

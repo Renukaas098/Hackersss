@@ -93,6 +93,11 @@ export async function register(payload) {
   return res.user;
 }
 
+// Invite codes for the shop sign-up dropdown -> [{ code, partnerId }]
+export async function getInviteCodes({ city }) {
+  return mock(() => mockApi.getInviteCodes({ city }));
+}
+
 // #12 -> { user, token }
 export async function login(email, password) {
   const res = await mock(() => mockApi.login({ email, password }));

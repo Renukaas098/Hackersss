@@ -7,6 +7,16 @@
       "email": "ngo.demo@example.com",
       "password": "demo1234",
       "cityId": "pune"
+    },
+    {
+      "id": "usr_0008",
+      "role": "shop",
+      "name": "Renuka A S",
+      "email": "abracadabra@gmail.com",
+      "password": "shop1234",
+      "cityId": "pune",
+      "areaId": "pune-hadapsar",
+      "partnerId": "ngo_partner_sample"
     }
   ],
   "inviteCodes": [

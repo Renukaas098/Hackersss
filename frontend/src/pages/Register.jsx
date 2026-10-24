@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useMeta } from "../context/MetaContext";
 import { CitySelect } from "../components/ui";
+import { getInviteCodes } from "../api";
+import { useAsync } from "../hooks/useAsync";
 
 export default function Register() {
   const { register } = useAuth();
@@ -15,6 +17,9 @@ export default function Register() {
 
   const cityAreas = meta.areas.filter((a) => a.cityId === city);
   const areaId = cityAreas.some((a) => a.id === form.areaId) ? form.areaId : cityAreas[0]?.id;
+  const codes = useAsync(() => getInviteCodes({ city }), [city]);
+  const cityCodes = codes.data || [];
+  const inviteCode = cityCodes.some((c) => c.code === form.inviteCode) ? form.inviteCode : cityCodes[0]?.code || "";
   const set = (key) => (e) => setForm({ ...form, [key]: e.target.value });
 
   async function onSubmit(e) {
@@ -23,11 +28,11 @@ export default function Register() {
     if (role === "ngo" && !form.organisationName.trim()) return setError("Enter your organisation name.");
     if (!/^\S+@\S+\.\S+$/.test(form.email)) return setError("Enter a valid email address.");
     if (form.password.length < 8) return setError("Use at least 8 characters for the password.");
-    if (role === "shop" && !form.inviteCode.trim()) return setError("Enter the invite code your NGO gave you.");
+    if (role === "shop" && !inviteCode) return setError("Pick the invite code your NGO gave you.");
 
     const payload =
       role === "shop"
-        ? { role, email: form.email.trim(), password: form.password, cityId: city, areaId, inviteCode: form.inviteCode.trim() }
+        ? { role, email: form.email.trim(), password: form.password, cityId: city, areaId, inviteCode }
         : { role, email: form.email.trim(), password: form.password, cityId: city, organisationName: form.organisationName.trim() };
 
     setBusy(true);
@@ -85,7 +90,14 @@ export default function Register() {
             </label>
             <label className="field" htmlFor="reg-code">
               Invite code from your NGO
-              <input id="reg-code" placeholder="e.g. PUNE-NGO-4821" value={form.inviteCode} onChange={set("inviteCode")} />
+              <select id="reg-code" value={inviteCode} onChange={set("inviteCode")} disabled={!cityCodes.length}>
+                {!cityCodes.length && <option value="">{codes.loading ? "Loading…" : "No invite codes for this city"}</option>}
+                {cityCodes.map((c) => (
+                  <option key={c.code} value={c.code}>
+                    {c.code}
+                  </option>
+                ))}
+              </select>
             </label>
           </>
         )}
