@@ -1,0 +1,36 @@
+{
+  "method": "POST",
+  "path": "/api/auth/login",
+  "auth": "none",
+  "purpose": "Email and password login. Returns the user and a bearer token.",
+  "usedBy": [
+    "Login"
+  ],
+  "requestBody": {
+    "email": "ngo.demo@example.com",
+    "password": "demo1234"
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "user": {
+        "id": "usr_0007",
+        "role": "ngo",
+        "name": "Sample NGO partner",
+        "email": "ngo.demo@example.com",
+        "cityId": "pune"
+      },
+      "token": "<jwt>"
+    }
+  },
+  "errors": [
+    {
+      "status": 401,
+      "body": {
+        "message": "Email or password is wrong.",
+        "code": "INVALID_CREDENTIALS"
+      }
+    }
+  ],
+  "priority": "core"
+}

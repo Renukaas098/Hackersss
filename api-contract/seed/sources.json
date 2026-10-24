@@ -1,0 +1,51 @@
+[
+  {
+    "id": "src-rl-pune",
+    "type": "recycler_rate_list",
+    "name": "Sample recycler rate list (Pune)",
+    "cityId": "pune",
+    "asOf": "2026-10-18"
+  },
+  {
+    "id": "src-ngo-pune",
+    "type": "ngo_sheet",
+    "name": "Sample NGO rate sheet (Pune)",
+    "cityId": "pune",
+    "asOf": "2026-10-12"
+  },
+  {
+    "id": "src-rl-kochi",
+    "type": "recycler_rate_list",
+    "name": "Sample recycler rate list (Kochi)",
+    "cityId": "kochi",
+    "asOf": "2026-10-16"
+  },
+  {
+    "id": "src-mun-kochi",
+    "type": "municipal",
+    "name": "Sample municipal MRF rates (Kochi)",
+    "cityId": "kochi",
+    "asOf": "2026-10-02"
+  },
+  {
+    "id": "src-rl-delhi",
+    "type": "recycler_rate_list",
+    "name": "Sample recycler rate list (Delhi)",
+    "cityId": "delhi",
+    "asOf": "2026-10-20"
+  },
+  {
+    "id": "src-ngo-delhi",
+    "type": "ngo_sheet",
+    "name": "Sample NGO rate sheet (Delhi)",
+    "cityId": "delhi",
+    "asOf": "2026-10-09"
+  },
+  {
+    "id": "src-shop",
+    "type": "shop_reports",
+    "name": "Verified shop reports (seeded)",
+    "cityId": null,
+    "asOf": "2026-10-22"
+  }
+]

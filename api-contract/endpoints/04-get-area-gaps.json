@@ -1,0 +1,103 @@
+{
+  "method": "GET",
+  "path": "/api/areas/gaps",
+  "auth": "none",
+  "purpose": "Per-area report count and median price gap, for the Area Map.",
+  "usedBy": [
+    "Area Map"
+  ],
+  "notes": [
+    "Areas with reportCount < threshold (5) must still be returned, but with visible=false and medianGapPct/worstMaterialId = null. Never leak the figure."
+  ],
+  "query": {
+    "city": {
+      "required": true,
+      "example": "pune"
+    },
+    "material": {
+      "required": false,
+      "example": "all",
+      "note": "reserved; frontend sends nothing yet"
+    }
+  },
+  "exampleUrl": "/api/areas/gaps?city=pune",
+  "response": {
+    "status": 200,
+    "body": {
+      "cityId": "pune",
+      "threshold": 5,
+      "areas": [
+        {
+          "areaId": "pune-kothrud",
+          "name": "Kothrud",
+          "lat": 18.5074,
+          "lng": 73.8077,
+          "reportCount": 14,
+          "visible": true,
+          "medianGapPct": 9,
+          "worstMaterialId": "newspaper"
+        },
+        {
+          "areaId": "pune-hadapsar",
+          "name": "Hadapsar",
+          "lat": 18.5089,
+          "lng": 73.926,
+          "reportCount": 22,
+          "visible": true,
+          "medianGapPct": 21,
+          "worstMaterialId": "pet"
+        },
+        {
+          "areaId": "pune-yerawada",
+          "name": "Yerawada",
+          "lat": 18.5523,
+          "lng": 73.8867,
+          "reportCount": 18,
+          "visible": true,
+          "medianGapPct": 27,
+          "worstMaterialId": "ldpe_film"
+        },
+        {
+          "areaId": "pune-kasba",
+          "name": "Kasba Peth",
+          "lat": 18.5196,
+          "lng": 73.8573,
+          "reportCount": 11,
+          "visible": true,
+          "medianGapPct": 12,
+          "worstMaterialId": "cardboard"
+        },
+        {
+          "areaId": "pune-aundh",
+          "name": "Aundh",
+          "lat": 18.559,
+          "lng": 73.8077,
+          "reportCount": 3,
+          "visible": false,
+          "medianGapPct": null,
+          "worstMaterialId": null
+        },
+        {
+          "areaId": "pune-pimpri",
+          "name": "Pimpri",
+          "lat": 18.6298,
+          "lng": 73.7997,
+          "reportCount": 9,
+          "visible": true,
+          "medianGapPct": 18,
+          "worstMaterialId": "iron"
+        }
+      ]
+    }
+  },
+  "errors": [
+    {
+      "status": 400,
+      "body": {
+        "message": "Unknown city \"mumbai\".",
+        "code": "UNKNOWN_CITY"
+      }
+    }
+  ],
+  "priority": "core"
+}

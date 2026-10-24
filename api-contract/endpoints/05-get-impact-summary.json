@@ -1,0 +1,44 @@
+{
+  "method": "GET",
+  "path": "/api/impact/summary",
+  "auth": "none",
+  "purpose": "KPI tiles on the Impact Dashboard and the Home stats strip.",
+  "usedBy": [
+    "Impact Dashboard",
+    "Home"
+  ],
+  "formulas": {
+    "avgGapPct": "latest month's average gap for the city",
+    "gapChangePts": "latest month gap minus first month gap (negative = improving)",
+    "kgAtOrAboveRange": "round(kgReported * shareAtOrAbove)",
+    "co2eAvoidedKg": "sum over materials of kg * emissionFactor (see /api/assumptions)",
+    "landfillAvoidedKg": "kg of lowValue materials * landfillRetentionUplift"
+  },
+  "query": {
+    "city": {
+      "required": true,
+      "example": "pune"
+    }
+  },
+  "exampleUrl": "/api/impact/summary?city=pune",
+  "response": {
+    "status": 200,
+    "body": {
+      "cityId": "pune",
+      "period": {
+        "from": "2026-05-01",
+        "to": "2026-10-24"
+      },
+      "avgGapPct": 16,
+      "gapChangePts": -8,
+      "reports": 77,
+      "kgReported": 4645,
+      "kgAtOrAboveRange": 1765,
+      "shareAtOrAbove": 0.38,
+      "co2eAvoidedKg": 6084,
+      "landfillAvoidedKg": 267,
+      "isSample": true
+    }
+  },
+  "priority": "core"
+}

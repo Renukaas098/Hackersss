@@ -1,0 +1,17 @@
+[
+  {
+    "id": "A",
+    "label": "Grade A",
+    "description": "Clean, dry, sorted by type"
+  },
+  {
+    "id": "B",
+    "label": "Grade B",
+    "description": "Mostly sorted, lightly soiled or mixed colours"
+  },
+  {
+    "id": "C",
+    "label": "Grade C",
+    "description": "Dirty, wet, or unsorted"
+  }
+]

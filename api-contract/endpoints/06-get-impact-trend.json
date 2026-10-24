@@ -1,0 +1,103 @@
+{
+  "method": "GET",
+  "path": "/api/impact/trend",
+  "auth": "none",
+  "purpose": "Monthly gap series for every city (comparison line chart) and kg sold by material for the selected city (bar chart).",
+  "usedBy": [
+    "Impact Dashboard"
+  ],
+  "query": {
+    "city": {
+      "required": true,
+      "example": "pune"
+    },
+    "months": {
+      "required": false,
+      "example": 6,
+      "note": "default 6"
+    }
+  },
+  "exampleUrl": "/api/impact/trend?city=pune&months=6",
+  "notes": [
+    "series always contains all cities, in the same order as /api/meta cities; gapPct aligns index-by-index with months."
+  ],
+  "response": {
+    "status": 200,
+    "body": {
+      "months": [
+        "2026-05",
+        "2026-06",
+        "2026-07",
+        "2026-08",
+        "2026-09",
+        "2026-10"
+      ],
+      "series": [
+        {
+          "cityId": "pune",
+          "gapPct": [
+            24,
+            22,
+            21,
+            19,
+            17,
+            16
+          ]
+        },
+        {
+          "cityId": "kochi",
+          "gapPct": [
+            18,
+            17,
+            15,
+            14,
+            13,
+            12
+          ]
+        },
+        {
+          "cityId": "delhi",
+          "gapPct": [
+            30,
+            29,
+            28,
+            26,
+            25,
+            24
+          ]
+        }
+      ],
+      "volumeByMaterial": [
+        {
+          "materialId": "pet",
+          "kg": 820
+        },
+        {
+          "materialId": "hdpe",
+          "kg": 310
+        },
+        {
+          "materialId": "ldpe_film",
+          "kg": 540
+        },
+        {
+          "materialId": "newspaper",
+          "kg": 690
+        },
+        {
+          "materialId": "cardboard",
+          "kg": 1240
+        },
+        {
+          "materialId": "iron",
+          "kg": 960
+        },
+        {
+          "materialId": "aluminium",
+          "kg": 85
+        }
+      ]
+    }
+  },
+  "priority": "core"
+}

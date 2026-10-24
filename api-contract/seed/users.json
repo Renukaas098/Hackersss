@@ -1,0 +1,29 @@
+{
+  "users": [
+    {
+      "id": "usr_0007",
+      "role": "ngo",
+      "name": "Sample NGO partner",
+      "email": "ngo.demo@example.com",
+      "password": "demo1234",
+      "cityId": "pune"
+    }
+  ],
+  "inviteCodes": [
+    {
+      "code": "PUNE-NGO-4821",
+      "partnerId": "ngo_partner_sample",
+      "cityId": "pune"
+    },
+    {
+      "code": "KOCHI-NGO-1307",
+      "partnerId": "ngo_partner_sample",
+      "cityId": "kochi"
+    },
+    {
+      "code": "DELHI-NGO-5590",
+      "partnerId": "ngo_partner_sample",
+      "cityId": "delhi"
+    }
+  ]
+}

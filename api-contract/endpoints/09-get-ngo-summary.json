@@ -1,0 +1,115 @@
+{
+  "method": "GET",
+  "path": "/api/ngo/summary",
+  "auth": "required (role ngo)",
+  "purpose": "Area-level underpayment table for advocacy, worst gap first.",
+  "usedBy": [
+    "NGO View"
+  ],
+  "headers": {
+    "Authorization": "Bearer <token>"
+  },
+  "query": {
+    "city": {
+      "required": true,
+      "example": "pune"
+    },
+    "from": {
+      "required": false,
+      "example": "2026-05-01"
+    },
+    "to": {
+      "required": false,
+      "example": "2026-10-24"
+    }
+  },
+  "exampleUrl": "/api/ngo/summary?city=pune&from=2026-05-01&to=2026-10-24",
+  "notes": [
+    "Only areas with reports >= threshold.",
+    "underpaidPerTonne = round((prevailingMedian - medianOffered) * 1000)."
+  ],
+  "response": {
+    "status": 200,
+    "body": {
+      "cityId": "pune",
+      "from": "2026-05-01",
+      "to": "2026-10-24",
+      "threshold": 5,
+      "rows": [
+        {
+          "areaId": "pune-yerawada",
+          "area": "Yerawada",
+          "reports": 18,
+          "worstMaterialId": "ldpe_film",
+          "worstMaterial": "LDPE film / carry bags",
+          "medianOffered": 7,
+          "prevailingMedian": 9.5,
+          "gapPct": 27,
+          "underpaidPerTonne": 2500
+        },
+        {
+          "areaId": "pune-hadapsar",
+          "area": "Hadapsar",
+          "reports": 22,
+          "worstMaterialId": "pet",
+          "worstMaterial": "PET bottles",
+          "medianOffered": 16,
+          "prevailingMedian": 20,
+          "gapPct": 21,
+          "underpaidPerTonne": 4000
+        },
+        {
+          "areaId": "pune-pimpri",
+          "area": "Pimpri",
+          "reports": 9,
+          "worstMaterialId": "iron",
+          "worstMaterial": "Iron / steel scrap",
+          "medianOffered": 21.5,
+          "prevailingMedian": 26.5,
+          "gapPct": 18,
+          "underpaidPerTonne": 5000
+        },
+        {
+          "areaId": "pune-kasba",
+          "area": "Kasba Peth",
+          "reports": 11,
+          "worstMaterialId": "cardboard",
+          "worstMaterial": "Cardboard (OCC)",
+          "medianOffered": 7.5,
+          "prevailingMedian": 8.5,
+          "gapPct": 12,
+          "underpaidPerTonne": 1000
+        },
+        {
+          "areaId": "pune-kothrud",
+          "area": "Kothrud",
+          "reports": 14,
+          "worstMaterialId": "newspaper",
+          "worstMaterial": "Newspaper",
+          "medianOffered": 11.5,
+          "prevailingMedian": 12.5,
+          "gapPct": 9,
+          "underpaidPerTonne": 1000
+        }
+      ],
+      "isSample": true
+    }
+  },
+  "errors": [
+    {
+      "status": 401,
+      "body": {
+        "message": "Log in to see this page.",
+        "code": "UNAUTHENTICATED"
+      }
+    },
+    {
+      "status": 403,
+      "body": {
+        "message": "This view is for NGO partners only.",
+        "code": "FORBIDDEN"
+      }
+    }
+  ],
+  "priority": "core"
+}

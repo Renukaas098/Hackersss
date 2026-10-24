@@ -1,0 +1,261 @@
+{
+  "method": "GET",
+  "path": "/api/meta",
+  "auth": "none",
+  "purpose": "All reference data for dropdowns and lookups. Loaded once when the app starts.",
+  "usedBy": [
+    "App start (every page)"
+  ],
+  "response": {
+    "status": 200,
+    "body": {
+      "cities": [
+        {
+          "id": "pune",
+          "name": "Pune",
+          "state": "Maharashtra",
+          "center": [
+            18.55,
+            73.85
+          ]
+        },
+        {
+          "id": "kochi",
+          "name": "Kochi",
+          "state": "Kerala",
+          "center": [
+            9.99,
+            76.29
+          ]
+        },
+        {
+          "id": "delhi",
+          "name": "Delhi",
+          "state": "Delhi NCR",
+          "center": [
+            28.6,
+            77.27
+          ]
+        }
+      ],
+      "areas": [
+        {
+          "id": "pune-kothrud",
+          "cityId": "pune",
+          "name": "Kothrud",
+          "lat": 18.5074,
+          "lng": 73.8077
+        },
+        {
+          "id": "pune-hadapsar",
+          "cityId": "pune",
+          "name": "Hadapsar",
+          "lat": 18.5089,
+          "lng": 73.926
+        },
+        {
+          "id": "pune-yerawada",
+          "cityId": "pune",
+          "name": "Yerawada",
+          "lat": 18.5523,
+          "lng": 73.8867
+        },
+        {
+          "id": "pune-kasba",
+          "cityId": "pune",
+          "name": "Kasba Peth",
+          "lat": 18.5196,
+          "lng": 73.8573
+        },
+        {
+          "id": "pune-aundh",
+          "cityId": "pune",
+          "name": "Aundh",
+          "lat": 18.559,
+          "lng": 73.8077
+        },
+        {
+          "id": "pune-pimpri",
+          "cityId": "pune",
+          "name": "Pimpri",
+          "lat": 18.6298,
+          "lng": 73.7997
+        },
+        {
+          "id": "kochi-ernakulam",
+          "cityId": "kochi",
+          "name": "Ernakulam South",
+          "lat": 9.9696,
+          "lng": 76.2891
+        },
+        {
+          "id": "kochi-kaloor",
+          "cityId": "kochi",
+          "name": "Kaloor",
+          "lat": 9.9971,
+          "lng": 76.2989
+        },
+        {
+          "id": "kochi-edappally",
+          "cityId": "kochi",
+          "name": "Edappally",
+          "lat": 10.0261,
+          "lng": 76.3125
+        },
+        {
+          "id": "kochi-fortkochi",
+          "cityId": "kochi",
+          "name": "Fort Kochi",
+          "lat": 9.9658,
+          "lng": 76.2421
+        },
+        {
+          "id": "kochi-vyttila",
+          "cityId": "kochi",
+          "name": "Vyttila",
+          "lat": 9.9674,
+          "lng": 76.32
+        },
+        {
+          "id": "kochi-kakkanad",
+          "cityId": "kochi",
+          "name": "Kakkanad",
+          "lat": 10.0159,
+          "lng": 76.3419
+        },
+        {
+          "id": "delhi-seelampur",
+          "cityId": "delhi",
+          "name": "Seelampur",
+          "lat": 28.668,
+          "lng": 77.27
+        },
+        {
+          "id": "delhi-okhla",
+          "cityId": "delhi",
+          "name": "Okhla",
+          "lat": 28.5355,
+          "lng": 77.2731
+        },
+        {
+          "id": "delhi-shahdara",
+          "cityId": "delhi",
+          "name": "Shahdara",
+          "lat": 28.6735,
+          "lng": 77.2896
+        },
+        {
+          "id": "delhi-mustafabad",
+          "cityId": "delhi",
+          "name": "Mustafabad",
+          "lat": 28.71,
+          "lng": 77.27
+        },
+        {
+          "id": "delhi-govindpuri",
+          "cityId": "delhi",
+          "name": "Govindpuri",
+          "lat": 28.534,
+          "lng": 77.264
+        },
+        {
+          "id": "delhi-tughlakabad",
+          "cityId": "delhi",
+          "name": "Tughlakabad",
+          "lat": 28.51,
+          "lng": 77.26
+        }
+      ],
+      "materials": [
+        {
+          "id": "pet",
+          "name": "PET bottles",
+          "category": "Plastic",
+          "lowValue": false,
+          "unit": "kg"
+        },
+        {
+          "id": "hdpe",
+          "name": "HDPE (milk, shampoo)",
+          "category": "Plastic",
+          "lowValue": false,
+          "unit": "kg"
+        },
+        {
+          "id": "ldpe_film",
+          "name": "LDPE film / carry bags",
+          "category": "Plastic",
+          "lowValue": true,
+          "unit": "kg"
+        },
+        {
+          "id": "newspaper",
+          "name": "Newspaper",
+          "category": "Paper",
+          "lowValue": false,
+          "unit": "kg"
+        },
+        {
+          "id": "cardboard",
+          "name": "Cardboard (OCC)",
+          "category": "Paper",
+          "lowValue": true,
+          "unit": "kg"
+        },
+        {
+          "id": "office",
+          "name": "White office paper",
+          "category": "Paper",
+          "lowValue": false,
+          "unit": "kg"
+        },
+        {
+          "id": "iron",
+          "name": "Iron / steel scrap",
+          "category": "Metal",
+          "lowValue": false,
+          "unit": "kg"
+        },
+        {
+          "id": "aluminium",
+          "name": "Aluminium cans",
+          "category": "Metal",
+          "lowValue": false,
+          "unit": "kg"
+        },
+        {
+          "id": "copper",
+          "name": "Copper wire (stripped)",
+          "category": "Metal",
+          "lowValue": false,
+          "unit": "kg"
+        },
+        {
+          "id": "ewaste",
+          "name": "E-waste (small appliances)",
+          "category": "E-waste",
+          "lowValue": false,
+          "unit": "kg"
+        }
+      ],
+      "grades": [
+        {
+          "id": "A",
+          "label": "Grade A",
+          "description": "Clean, dry, sorted by type"
+        },
+        {
+          "id": "B",
+          "label": "Grade B",
+          "description": "Mostly sorted, lightly soiled or mixed colours"
+        },
+        {
+          "id": "C",
+          "label": "Grade C",
+          "description": "Dirty, wet, or unsorted"
+        }
+      ]
+    }
+  },
+  "priority": "core"
+}

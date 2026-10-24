@@ -1,0 +1,64 @@
+{
+  "method": "GET",
+  "path": "/api/ngo/export",
+  "auth": "required (role ngo)",
+  "purpose": "Same rows as /api/ngo/summary as a CSV download.",
+  "usedBy": [
+    "NGO View (Export CSV button)"
+  ],
+  "headers": {
+    "Authorization": "Bearer <token>"
+  },
+  "query": {
+    "city": {
+      "required": true,
+      "example": "pune"
+    },
+    "from": {
+      "required": false,
+      "example": "2026-05-01"
+    },
+    "to": {
+      "required": false,
+      "example": "2026-10-24"
+    },
+    "format": {
+      "required": true,
+      "example": "csv"
+    }
+  },
+  "exampleUrl": "/api/ngo/export?city=pune&from=2026-05-01&to=2026-10-24&format=csv",
+  "responseHeaders": {
+    "Content-Type": "text/csv; charset=utf-8",
+    "Content-Disposition": "attachment; filename=\"underpayment-pune-2026-05-01-to-2026-10-24.csv\""
+  },
+  "response": {
+    "status": 200,
+    "bodyFile": "10-ngo-export.sample.csv",
+    "body": [
+      "area,reports,worst_material,median_offered_inr_per_kg,prevailing_median_inr_per_kg,gap_pct,underpaid_inr_per_tonne,is_sample",
+      "Yerawada,18,\"LDPE film / carry bags\",7,9.5,27,2500,true",
+      "Hadapsar,22,\"PET bottles\",16,20,21,4000,true",
+      "Pimpri,9,\"Iron / steel scrap\",21.5,26.5,18,5000,true",
+      "Kasba Peth,11,\"Cardboard (OCC)\",7.5,8.5,12,1000,true",
+      "Kothrud,14,\"Newspaper\",11.5,12.5,9,1000,true"
+    ]
+  },
+  "errors": [
+    {
+      "status": 401,
+      "body": {
+        "message": "Log in to see this page.",
+        "code": "UNAUTHENTICATED"
+      }
+    },
+    {
+      "status": 403,
+      "body": {
+        "message": "This view is for NGO partners only.",
+        "code": "FORBIDDEN"
+      }
+    }
+  ],
+  "priority": "core"
+}
